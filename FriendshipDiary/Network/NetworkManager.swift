@@ -23,7 +23,7 @@ class NetworkManager {
         return Session(configuration: configuration)
     }()
     
-    private static func request(_ address: Link, method: HTTPMethod, parameters: Parameters? = nil, logMethod: Bool = false, successBlock: @escaping ([String:Any]?) -> (), failtureBlock: @escaping (ApiItemError?) -> ()) {
+    private static func request(_ address: Link, method: HTTPMethod, parameters: Parameters? = nil, logMethod: Bool = true, successBlock: @escaping ([String:Any]?) -> (), failtureBlock: @escaping (ApiItemError?) -> ()) {
         let headers : HTTPHeaders = [
             "Authorization": "Bearer " + (sessionToken ?? ""),
             "Content-Type": "application/json"
@@ -111,6 +111,38 @@ class NetworkManager {
     
     static func deleteFriend(username: String, successBlock: @escaping ([String: Any]?) -> (), failtureBlock: @escaping (ApiItemError?) -> ()) {
         request(NetworkManager.address.deleteFriend(username: username), method: .delete, successBlock: { (data) in
+            successBlock(data)
+        }) { (error) in
+            failtureBlock(error)
+        }
+    }
+    
+    static func postMemory(title: String, description: String, image: String, friends: [String], latitude: Double, longitude: Double, successBlock: @escaping ([String: Any]?) -> (), failtureBlock: @escaping (ApiItemError?) -> ()) {
+        let localization = [ "latitude": latitude, "longitude" : longitude]
+        let parameters: Parameters = [
+            "title": title,
+            "description": description,
+            "image": image,
+            "friends": friends,
+            "localization": localization
+        ]
+        request(NetworkManager.address.postMemory, method: .post, parameters: parameters, successBlock: { (data) in
+            successBlock(data)
+        }) { (error) in
+            failtureBlock(error)
+        }
+    }
+    
+    static func postDraft(title: String, description: String, image: String, friends: [String], latitude: Double, longitude: Double, successBlock: @escaping ([String: Any]?) -> (), failtureBlock: @escaping (ApiItemError?) -> ()) {
+        let localization = [ "latitude": latitude, "longitude" : longitude]
+        let parameters: Parameters = [
+            "title": title,
+            "description": description,
+            "image": image,
+            "friends": friends,
+            "localization": localization
+        ]
+        request(NetworkManager.address.postMemoriesDraft, method: .post, parameters: parameters, successBlock: { (data) in
             successBlock(data)
         }) { (error) in
             failtureBlock(error)

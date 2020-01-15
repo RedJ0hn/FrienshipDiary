@@ -14,8 +14,10 @@ class AddMemoryViewPresenter {
     
     var title: String?
     var description: String?
-    var friendsToMemory: [String]?
+    var friendsToMemory: [String] = []
     var image: String?
+    var latitude: Double?
+    var longitude: Double?
     
     func getFriends(successBlock: @escaping ()->(), failtureBlock: @escaping (ApiItemError?) -> ()) {
         NetworkManager.getFriends(successBlock: { (dict) in
@@ -27,7 +29,17 @@ class AddMemoryViewPresenter {
         }, failtureBlock: failtureBlock)
     }
     
-    func addMemory(){
+    func addMemory(successBlock: @escaping ()->(), failtureBlock: @escaping (ApiItemError?) -> ()) {
+        NetworkManager.postMemory(title: title ?? "", description: description ?? "", image: image ?? "", friends: friendsToMemory, latitude: latitude ?? 0, longitude: longitude ?? 0, successBlock: { (_) in
+            successBlock()
+        }, failtureBlock: failtureBlock)
+        
+    }
+    
+    func addDraft(successBlock: @escaping ()->(), failtureBlock: @escaping (ApiItemError?) -> ()) {
+        NetworkManager.postDraft(title: title ?? "", description: description ?? "", image: image ?? "", friends: friendsToMemory, latitude: latitude ?? 0, longitude: longitude ?? 0, successBlock: { (_) in
+            successBlock()
+        }, failtureBlock: failtureBlock)
         
     }
     

@@ -26,7 +26,21 @@ class AddMemoryViewController: BaseViewController {
         descriptionTextView.layer.borderWidth = 1
         descriptionTextView.layer.cornerRadius = 5
         friendsTableView.dataSource = self
+        friendsTableView.delegate = self
+        let mapTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addPinAction))
+        mapView.addGestureRecognizer(mapTapGestureRecognizer)
         loadData()
+    }
+    
+    @objc func addPinAction(gestureRecognizer: UITapGestureRecognizer) {
+        mapView.removeAnnotations(mapView.annotations)
+        let touchPoint: CGPoint = gestureRecognizer.location(in: mapView)
+        let coordinate: CLLocationCoordinate2D = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        mapView.addAnnotation(annotation)
+        presenter.latitude = coordinate.latitude
+        presenter.longitude = coordinate.longitude
     }
     
     func loadData() {
@@ -40,10 +54,50 @@ class AddMemoryViewController: BaseViewController {
     }
 
     @IBAction func choosePhoto(_ sender: Any) {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.allowsEditing = false
+        pickerController.mediaTypes = ["public.image"]
+        pickerController.sourceType = .photoLibrary
+        self.present(pickerController, animated: true, completion: nil)
+
     }
+    
     @IBAction func publish(_ sender: Any) {
+        presenter.title = titleTextField.text
+        presenter.description = descriptionTextView.text
+        SVProgressHUD.show()
+        presenter.addMemory(successBlock: {
+            self.resetViewController()
+            self.tabBarController?.selectedIndex = 0
+            SVProgressHUD.popActivity()
+        }) { (error) in
+            SVProgressHUD.showError(withStatus: error?.message)
+        }
     }
+    
     @IBAction func saveToDrafts(_ sender: Any) {
+        presenter.title = titleTextField.text
+        presenter.description = descriptionTextView.text
+        SVProgressHUD.show()
+        presenter.addDraft(successBlock: {
+            self.resetViewController()
+            SVProgressHUD.showInfo(withStatus: "Done")
+        }) { (error) in
+            SVProgressHUD.showError(withStatus: error?.message)
+        }
+    }
+    
+    private func resetViewController() {
+        titleTextField.text = ""
+        descriptionTextView.text = ""
+        choosedPhotoImageView.image = nil
+        choosedPhotoImageView.isHidden = true
+        for indexPath in friendsTableView.indexPathsForSelectedRows ?? [] {
+            friendsTableView.deselectRow(at: indexPath, animated: true)
+        }
+        mapView.removeAnnotations(mapView.annotations)
+        
     }
     
 }
@@ -62,5 +116,37 @@ extension AddMemoryViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
+    
+}
+
+extension AddMemoryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let friendUsername = presenter.friends[indexPath.row].username {
+            presenter.friendsToMemory.append(friendUsername)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        if let friendUsername = presenter.friends[indexPath.row].username, let index = presenter.friendsToMemory.firstIndex(of: friendUsername) {
+            presenter.friendsToMemory.remove(at: index)
+        }
+    }
+}
+
+extension AddMemoryViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image =  info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            choosedPhotoImageView.image = image
+            choosedPhotoImageView.isHidden = false
+            
+            presenter.image = image.imageToBase64()
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AddMemoryViewController: UINavigationControllerDelegate {
     
 }

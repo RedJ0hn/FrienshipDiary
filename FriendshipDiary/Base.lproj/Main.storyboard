@@ -136,7 +136,7 @@
                                                     <constraint firstAttribute="width" secondItem="qH3-pQ-k6g" secondAttribute="height" multiplier="2:1" id="3ev-T1-0Vb"/>
                                                 </constraints>
                                             </mapView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HVM-xY-8RR">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="HVM-xY-8RR">
                                                 <rect key="frame" x="0.0" y="718.5" width="414" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYr-Uo-Bwl">
@@ -148,8 +148,14 @@
                                                     </button>
                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5DK-Jn-Elx">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="69T-cc-teZ"/>
+                                                        </constraints>
                                                     </imageView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="5DK-Jn-Elx" firstAttribute="width" secondItem="HVM-xY-8RR" secondAttribute="width" id="5bt-dk-ViL"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="q57-I1-jFb">
                                                 <rect key="frame" x="20" y="768.5" width="374" height="75"/>

@@ -32,7 +32,8 @@ class NetworkURL {
     
     // Memories
     let getMemories = Link(endpoint: "memories")
-    let getMemoriesDraft = Link(endpoint: "memories/draft")
+    let postMemory = Link(endpoint: "memory")
+    let getMemoriesDraft = Link(endpoint: "memories/drafts")
     let postMemoriesDraft = Link(endpoint: "memories/draft")
     
     

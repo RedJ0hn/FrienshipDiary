@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		613039BA23CD22B5003D079C /* AddFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039B923CD22B5003D079C /* AddFriendsViewController.swift */; };
+		613039BC23CD22C7003D079C /* AddFriendsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039BB23CD22C7003D079C /* AddFriendsViewPresenter.swift */; };
+		613039BE23CD22DF003D079C /* ApiItemUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039BD23CD22DF003D079C /* ApiItemUser.swift */; };
+		613039C123CD2644003D079C /* AddFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039C023CD2644003D079C /* AddFriendsTableViewCell.swift */; };
+		613039C523CD2C2E003D079C /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039C323CD2C2D003D079C /* FriendsViewController.swift */; };
+		613039C623CD2C2E003D079C /* FriendsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039C423CD2C2D003D079C /* FriendsViewPresenter.swift */; };
+		613039CD23CD2C65003D079C /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039CC23CD2C65003D079C /* FriendsTableViewCell.swift */; };
+		613039D023CE2A23003D079C /* AddMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039CF23CE2A23003D079C /* AddMemoryViewController.swift */; };
+		613039D223CE2A35003D079C /* AddMemoryViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039D123CE2A35003D079C /* AddMemoryViewPresenter.swift */; };
+		61905AE623CD116300BFC46B /* MemoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61905AE523CD116300BFC46B /* MemoriesViewController.swift */; };
+		61905AE823CD117800BFC46B /* MemoriesViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61905AE723CD117800BFC46B /* MemoriesViewPresenter.swift */; };
+		61905AEB23CD11BE00BFC46B /* MemoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61905AEA23CD11BE00BFC46B /* MemoryTableViewCell.swift */; };
 		61C574FA23C9F549004C6453 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C574F923C9F549004C6453 /* AccountViewController.swift */; };
 		61F0614923C1056D0083289D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0614423C1056C0083289D /* NetworkManager.swift */; };
 		61F0614A23C1056D0083289D /* NetworkURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0614523C1056C0083289D /* NetworkURL.swift */; };
@@ -34,6 +46,18 @@
 /* Begin PBXFileReference section */
 		15BBED1FA42C6A268F8ED37D /* Pods-FriendshipDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendshipDiary.release.xcconfig"; path = "Target Support Files/Pods-FriendshipDiary/Pods-FriendshipDiary.release.xcconfig"; sourceTree = "<group>"; };
 		308F89573E28EEE715888117 /* Pods_FriendshipDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FriendshipDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		613039B923CD22B5003D079C /* AddFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsViewController.swift; sourceTree = "<group>"; };
+		613039BB23CD22C7003D079C /* AddFriendsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsViewPresenter.swift; sourceTree = "<group>"; };
+		613039BD23CD22DF003D079C /* ApiItemUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiItemUser.swift; sourceTree = "<group>"; };
+		613039C023CD2644003D079C /* AddFriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsTableViewCell.swift; sourceTree = "<group>"; };
+		613039C323CD2C2D003D079C /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		613039C423CD2C2D003D079C /* FriendsViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewPresenter.swift; sourceTree = "<group>"; };
+		613039CC23CD2C65003D079C /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		613039CF23CE2A23003D079C /* AddMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoryViewController.swift; sourceTree = "<group>"; };
+		613039D123CE2A35003D079C /* AddMemoryViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoryViewPresenter.swift; sourceTree = "<group>"; };
+		61905AE523CD116300BFC46B /* MemoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesViewController.swift; sourceTree = "<group>"; };
+		61905AE723CD117800BFC46B /* MemoriesViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesViewPresenter.swift; sourceTree = "<group>"; };
+		61905AEA23CD11BE00BFC46B /* MemoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTableViewCell.swift; sourceTree = "<group>"; };
 		61C574F923C9F549004C6453 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		61F0614423C1056C0083289D /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		61F0614523C1056C0083289D /* NetworkURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkURL.swift; sourceTree = "<group>"; };
@@ -72,6 +96,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		613039B823CD2283003D079C /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				613039C723CD2C31003D079C /* Cells */,
+				613039C323CD2C2D003D079C /* FriendsViewController.swift */,
+				613039C423CD2C2D003D079C /* FriendsViewPresenter.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		613039BF23CD261E003D079C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				613039C023CD2644003D079C /* AddFriendsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		613039C223CD2A7C003D079C /* AddFriends */ = {
+			isa = PBXGroup;
+			children = (
+				613039BF23CD261E003D079C /* Cells */,
+				613039B923CD22B5003D079C /* AddFriendsViewController.swift */,
+				613039BB23CD22C7003D079C /* AddFriendsViewPresenter.swift */,
+			);
+			path = AddFriends;
+			sourceTree = "<group>";
+		};
+		613039C723CD2C31003D079C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				613039CC23CD2C65003D079C /* FriendsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		613039CE23CE29FD003D079C /* AddMemory */ = {
+			isa = PBXGroup;
+			children = (
+				613039CF23CE2A23003D079C /* AddMemoryViewController.swift */,
+				613039D123CE2A35003D079C /* AddMemoryViewPresenter.swift */,
+			);
+			path = AddMemory;
+			sourceTree = "<group>";
+		};
+		61905AE423CD113D00BFC46B /* Memories */ = {
+			isa = PBXGroup;
+			children = (
+				61905AE923CD119A00BFC46B /* Cells */,
+				61905AE523CD116300BFC46B /* MemoriesViewController.swift */,
+				61905AE723CD117800BFC46B /* MemoriesViewPresenter.swift */,
+			);
+			path = Memories;
+			sourceTree = "<group>";
+		};
+		61905AE923CD119A00BFC46B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				61905AEA23CD11BE00BFC46B /* MemoryTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		61C574F823C9F4F3004C6453 /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +185,7 @@
 				61F0615323C345BA0083289D /* ApiItemError.swift */,
 				61F0615523C354430083289D /* ApiItemLocalization.swift */,
 				61F0615723C3551D0083289D /* ApiItemMemeory.swift */,
+				613039BD23CD22DF003D079C /* ApiItemUser.swift */,
 			);
 			path = ApiItems;
 			sourceTree = "<group>";
@@ -114,6 +202,10 @@
 			isa = PBXGroup;
 			children = (
 				61F0616023C9E9430083289D /* BaseViewController.swift */,
+				613039CE23CE29FD003D079C /* AddMemory */,
+				613039C223CD2A7C003D079C /* AddFriends */,
+				613039B823CD2283003D079C /* Friends */,
+				61905AE423CD113D00BFC46B /* Memories */,
 				61C574F823C9F4F3004C6453 /* Account */,
 				61F0616223C9E9BC0083289D /* Register */,
 				61F0615D23C9E8FC0083289D /* Login */,
@@ -309,21 +401,33 @@
 			files = (
 				61F0616423C9E9DE0083289D /* LoginViewPresenter.swift in Sources */,
 				61F0614C23C1056D0083289D /* NetworkRequest.swift in Sources */,
+				613039D023CE2A23003D079C /* AddMemoryViewController.swift in Sources */,
 				61F0614D23C1056D0083289D /* NetworkResponse.swift in Sources */,
 				61F0614923C1056D0083289D /* NetworkManager.swift in Sources */,
 				61F0615B23C84FF20083289D /* UIImageExtensions.swift in Sources */,
 				61F6186923C101B8000F5223 /* ViewController.swift in Sources */,
+				613039BA23CD22B5003D079C /* AddFriendsViewController.swift in Sources */,
+				61905AE623CD116300BFC46B /* MemoriesViewController.swift in Sources */,
 				61F0616823C9EA150083289D /* RegisterViewPresenter.swift in Sources */,
 				61F0616123C9E9440083289D /* BaseViewController.swift in Sources */,
 				61C574FA23C9F549004C6453 /* AccountViewController.swift in Sources */,
+				613039CD23CD2C65003D079C /* FriendsTableViewCell.swift in Sources */,
 				61F0615623C354430083289D /* ApiItemLocalization.swift in Sources */,
+				613039D223CE2A35003D079C /* AddMemoryViewPresenter.swift in Sources */,
 				61F6186523C101B8000F5223 /* AppDelegate.swift in Sources */,
+				613039BE23CD22DF003D079C /* ApiItemUser.swift in Sources */,
 				61F6186723C101B8000F5223 /* SceneDelegate.swift in Sources */,
 				61F0614A23C1056D0083289D /* NetworkURL.swift in Sources */,
+				613039C623CD2C2E003D079C /* FriendsViewPresenter.swift in Sources */,
 				61F0616623C9EA040083289D /* RegisterViewController.swift in Sources */,
+				613039BC23CD22C7003D079C /* AddFriendsViewPresenter.swift in Sources */,
+				613039C523CD2C2E003D079C /* FriendsViewController.swift in Sources */,
 				61F0615823C3551D0083289D /* ApiItemMemeory.swift in Sources */,
 				61F0615423C345BA0083289D /* ApiItemError.swift in Sources */,
 				61F0615F23C9E9360083289D /* LoginViewController.swift in Sources */,
+				61905AE823CD117800BFC46B /* MemoriesViewPresenter.swift in Sources */,
+				61905AEB23CD11BE00BFC46B /* MemoryTableViewCell.swift in Sources */,
+				613039C123CD2644003D079C /* AddFriendsTableViewCell.swift in Sources */,
 				61F0615223C27ABC0083289D /* ApiItemToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

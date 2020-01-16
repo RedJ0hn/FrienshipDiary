@@ -23,7 +23,7 @@ class NetworkManager {
         return Session(configuration: configuration)
     }()
     
-    private static func request(_ address: Link, method: HTTPMethod, parameters: Parameters? = nil, logMethod: Bool = true, successBlock: @escaping ([String:Any]?) -> (), failtureBlock: @escaping (ApiItemError?) -> ()) {
+    private static func request(_ address: Link, method: HTTPMethod, parameters: Parameters? = nil, logMethod: Bool = false, successBlock: @escaping ([String:Any]?) -> (), failtureBlock: @escaping (ApiItemError?) -> ()) {
         let headers : HTTPHeaders = [
             "Authorization": "Bearer " + (sessionToken ?? ""),
             "Content-Type": "application/json"

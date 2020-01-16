@@ -29,6 +29,10 @@ class AddMemoryViewController: BaseViewController {
         friendsTableView.delegate = self
         let mapTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addPinAction))
         mapView.addGestureRecognizer(mapTapGestureRecognizer)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadData()
     }
     
@@ -50,6 +54,12 @@ class AddMemoryViewController: BaseViewController {
             SVProgressHUD.popActivity()
         }) { (error) in
             SVProgressHUD.showError(withStatus: error?.message)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DraftsViewController {
+            destination.delegate = self
         }
     }
 
@@ -97,7 +107,24 @@ class AddMemoryViewController: BaseViewController {
             friendsTableView.deselectRow(at: indexPath, animated: true)
         }
         mapView.removeAnnotations(mapView.annotations)
-        
+    }
+    
+    private func configure(with draft: ApiItemMemory) {
+        titleTextField.text = draft.title
+        descriptionTextView.text = draft.description
+        choosedPhotoImageView.image = UIImage.init(base64: draft.image)
+        choosedPhotoImageView.isHidden = false
+        for friendUsername in draft.friends ?? [] {
+            if let index = presenter.friends.firstIndex(where: { (friend) -> Bool in
+                return friend.username == friendUsername
+            }) {
+                friendsTableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .top)
+            }
+        }
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: draft.localization?.latitude ?? 0, longitude: draft.localization?.longitude ?? 0)
+        mapView.addAnnotation(annotation)
+        mapView.showAnnotations([annotation], animated: true)
     }
     
 }
@@ -145,6 +172,15 @@ extension AddMemoryViewController: UIImagePickerControllerDelegate {
         }
         picker.dismiss(animated: true, completion: nil)
     }
+}
+
+extension AddMemoryViewController: DraftsViewControllerDelegate {
+    
+    func draftSelected(draft: ApiItemMemory) {
+        configure(with: draft)
+        presenter.configure(with: draft)
+    }
+    
 }
 
 extension AddMemoryViewController: UINavigationControllerDelegate {

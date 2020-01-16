@@ -148,5 +148,13 @@ class NetworkManager {
             failtureBlock(error)
         }
     }
+    
+    static func getDrafts(successBlock: @escaping ([String:Any]?)->(), failtureBlock: @escaping (ApiItemError?) -> ()) {
+        request(NetworkManager.address.getMemoriesDrafts, method: .get, successBlock: { (data) in
+            successBlock(data)
+        }) { (error) in
+            failtureBlock(error)
+        }
+    }
         
 }

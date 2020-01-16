@@ -24,8 +24,9 @@ class AddFriendsViewController: BaseViewController {
         super.viewDidLoad()
         tableView.dataSource = self
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         SVProgressHUD.show()
         presenter.loadUsers(successBlock: {
             self.tableView.reloadData()

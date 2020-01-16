@@ -19,6 +19,24 @@ class AddMemoryViewPresenter {
     var latitude: Double?
     var longitude: Double?
     
+    func configure(with draft: ApiItemMemory) {
+        title = draft.title
+        description = draft.description
+        friendsToMemory = draft.friends ?? []
+        image = draft.image
+        latitude = draft.localization?.latitude
+        longitude = draft.localization?.longitude
+    }
+    
+    private func reset() {
+        title = nil
+        description = nil
+        friendsToMemory.removeAll()
+        image = nil
+        latitude = nil
+        longitude = nil
+    }
+    
     func getFriends(successBlock: @escaping ()->(), failtureBlock: @escaping (ApiItemError?) -> ()) {
         NetworkManager.getFriends(successBlock: { (dict) in
             guard let dict = dict else { return }
@@ -31,6 +49,7 @@ class AddMemoryViewPresenter {
     
     func addMemory(successBlock: @escaping ()->(), failtureBlock: @escaping (ApiItemError?) -> ()) {
         NetworkManager.postMemory(title: title ?? "", description: description ?? "", image: image ?? "", friends: friendsToMemory, latitude: latitude ?? 0, longitude: longitude ?? 0, successBlock: { (_) in
+            self.reset()
             successBlock()
         }, failtureBlock: failtureBlock)
         
@@ -38,6 +57,7 @@ class AddMemoryViewPresenter {
     
     func addDraft(successBlock: @escaping ()->(), failtureBlock: @escaping (ApiItemError?) -> ()) {
         NetworkManager.postDraft(title: title ?? "", description: description ?? "", image: image ?? "", friends: friendsToMemory, latitude: latitude ?? 0, longitude: longitude ?? 0, successBlock: { (_) in
+            self.reset()
             successBlock()
         }, failtureBlock: failtureBlock)
         

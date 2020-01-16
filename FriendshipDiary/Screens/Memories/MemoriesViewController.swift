@@ -21,8 +21,8 @@ class MemoriesViewController: BaseViewController {
         tableView.estimatedRowHeight = 325
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         SVProgressHUD.show()
         presenter.loadMemories(successBlock: {
             self.tableView.reloadData()

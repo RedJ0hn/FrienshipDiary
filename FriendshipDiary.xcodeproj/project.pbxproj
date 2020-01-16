@@ -16,6 +16,8 @@
 		613039CD23CD2C65003D079C /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039CC23CD2C65003D079C /* FriendsTableViewCell.swift */; };
 		613039D023CE2A23003D079C /* AddMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039CF23CE2A23003D079C /* AddMemoryViewController.swift */; };
 		613039D223CE2A35003D079C /* AddMemoryViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039D123CE2A35003D079C /* AddMemoryViewPresenter.swift */; };
+		613039D623D0BD10003D079C /* DraftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039D523D0BD10003D079C /* DraftsViewController.swift */; };
+		613039D823D0BD26003D079C /* DraftsViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613039D723D0BD25003D079C /* DraftsViewPresenter.swift */; };
 		61905AE623CD116300BFC46B /* MemoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61905AE523CD116300BFC46B /* MemoriesViewController.swift */; };
 		61905AE823CD117800BFC46B /* MemoriesViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61905AE723CD117800BFC46B /* MemoriesViewPresenter.swift */; };
 		61905AEB23CD11BE00BFC46B /* MemoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61905AEA23CD11BE00BFC46B /* MemoryTableViewCell.swift */; };
@@ -55,6 +57,8 @@
 		613039CC23CD2C65003D079C /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		613039CF23CE2A23003D079C /* AddMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoryViewController.swift; sourceTree = "<group>"; };
 		613039D123CE2A35003D079C /* AddMemoryViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoryViewPresenter.swift; sourceTree = "<group>"; };
+		613039D523D0BD10003D079C /* DraftsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftsViewController.swift; sourceTree = "<group>"; };
+		613039D723D0BD25003D079C /* DraftsViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftsViewPresenter.swift; sourceTree = "<group>"; };
 		61905AE523CD116300BFC46B /* MemoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesViewController.swift; sourceTree = "<group>"; };
 		61905AE723CD117800BFC46B /* MemoriesViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesViewPresenter.swift; sourceTree = "<group>"; };
 		61905AEA23CD11BE00BFC46B /* MemoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,6 +145,15 @@
 			path = AddMemory;
 			sourceTree = "<group>";
 		};
+		613039D423D0BCE5003D079C /* Drafts */ = {
+			isa = PBXGroup;
+			children = (
+				613039D523D0BD10003D079C /* DraftsViewController.swift */,
+				613039D723D0BD25003D079C /* DraftsViewPresenter.swift */,
+			);
+			path = Drafts;
+			sourceTree = "<group>";
+		};
 		61905AE423CD113D00BFC46B /* Memories */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +219,7 @@
 				613039C223CD2A7C003D079C /* AddFriends */,
 				613039B823CD2283003D079C /* Friends */,
 				61905AE423CD113D00BFC46B /* Memories */,
+				613039D423D0BCE5003D079C /* Drafts */,
 				61C574F823C9F4F3004C6453 /* Account */,
 				61F0616223C9E9BC0083289D /* Register */,
 				61F0615D23C9E8FC0083289D /* Login */,
@@ -410,6 +424,7 @@
 				61905AE623CD116300BFC46B /* MemoriesViewController.swift in Sources */,
 				61F0616823C9EA150083289D /* RegisterViewPresenter.swift in Sources */,
 				61F0616123C9E9440083289D /* BaseViewController.swift in Sources */,
+				613039D823D0BD26003D079C /* DraftsViewPresenter.swift in Sources */,
 				61C574FA23C9F549004C6453 /* AccountViewController.swift in Sources */,
 				613039CD23CD2C65003D079C /* FriendsTableViewCell.swift in Sources */,
 				61F0615623C354430083289D /* ApiItemLocalization.swift in Sources */,
@@ -429,6 +444,7 @@
 				61905AEB23CD11BE00BFC46B /* MemoryTableViewCell.swift in Sources */,
 				613039C123CD2644003D079C /* AddFriendsTableViewCell.swift in Sources */,
 				61F0615223C27ABC0083289D /* ApiItemToken.swift in Sources */,
+				613039D623D0BD10003D079C /* DraftsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
